@@ -104,9 +104,10 @@ src/
 │   ├── services.module.ts               # Module for Services
 │   ├── services.repository.ts           # Services Repository
 │   └── services.service.ts              # Service for handling the operations of services
-├── versions/
-|   └── tests/
+├── tests/
+|   └── versions/
 |       └── versions.service.spec.ts     # Tests for versions
+├── versions/
 │   ├── version.entity.ts                # Version entity
 │   ├── versions.controller.ts           # Controller for Version to handle the requests
 │   ├── versions.module.ts               # Module for versions
