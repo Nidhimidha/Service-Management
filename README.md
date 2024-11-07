@@ -3,15 +3,12 @@
 
 ##  Installation
 
-1. Clone the repository
-```
-https://github.com/Nidhimidha/Service-Management.git
-```
+1. Clone the repository ` https://github.com/Nidhimidha/Service-Management.git`
 2. Install [docker](https://www.docker.com/products/docker-desktop/) to run postgres
-3. Run the command - ``` docker run --name <DOCKER_CONTAINER_NAME> -p 5432:5432 -e POSTGRES_PASSWORD=<PASSWORD> -d <CONTAINER_NAME> ```
+3. Run the command - ` docker run --name <DOCKER_CONTAINER_NAME> -p 5432:5432 -e POSTGRES_PASSWORD=<PASSWORD> -d <CONTAINER_NAME> `
 4. Use tool such as [DBeaver](https://dbeaver.io/download/) or [pgAdmin](https://www.pgadmin.org/download/) to manage and observe the database
 5. Create Database using DB tool
-6. Update environment variables in .env.dev as per your configurations
+6. Update environment variables in `.env.dev` as per your configurations
 
 
 ## Project setup
@@ -126,7 +123,7 @@ src/
 
 
 ## Major Items Pending
-- Return current page number and total number of services in the GET SERVICES response
+- Return current page number and total number of records in the GET SERVICES response
 - Add unit tests for all controllers, repository and services
 - Consider using cursor based pagination instead of offset based pagination
 
@@ -135,9 +132,7 @@ src/
 
 ### Event driven updates
 
-When a new service is added/updated, the version count is updated for the service
-'version.set' event is emitted to the versions service
-New version is pushed to to already existing list of versions for the added/updated service ID in the versions entity
+When a new service is added/updated, the version count is updated for the service. 'version.set' event is emitted to the versions service. New version is pushed to to already existing list of versions for the added/updated service ID in the versions entity
 
 
 ## APIs
@@ -148,6 +143,7 @@ New version is pushed to to already existing list of versions for the added/upda
 
 ```
 POST http://localhost:3000/auth/signup
+
 REQUEST PAYLOAD
 {
     "username": "nidhim",
@@ -160,6 +156,7 @@ REQUEST PAYLOAD
 
 ```
 POST http://localhost:3000/auth/signin
+
 REQUEST PAYLOAD
 {
     "username": "nidhim",
@@ -173,6 +170,7 @@ REQUEST PAYLOAD
 
 ```
 GET http://localhost:3000/services
+
 SAMPLE RESPONSE -
 [
     {
@@ -190,6 +188,7 @@ SAMPLE RESPONSE -
 
 ```
 GET http://localhost:3000/services?searchText=contact&page=1&limit=1&sortBy=name&sortOrder=DESC
+
 SAMPLE RESPONSE -
 
 [
