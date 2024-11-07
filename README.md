@@ -1,6 +1,18 @@
-## Description
 
-Service Management
+# Service Management
+
+##  Installation
+
+1. Clone the repository
+```
+https://github.com/Nidhimidha/Service-Management.git
+```
+2. Install [docker](https://www.docker.com/products/docker-desktop/) to run postgres
+3. Run the command - ``` docker run --name <DOCKER_CONTAINER_NAME> -p 5432:5432 -e POSTGRES_PASSWORD=<PASSWORD> -d <CONTAINER_NAME> ```
+4. Use tool such as [DBeaver](https://dbeaver.io/download/) or [pgAdmin](https://www.pgadmin.org/download/) to manage and observe the database
+5. Create Database using DB tool
+6. Update environment variables in .env.dev as per your configurations
+
 
 ## Project setup
 
@@ -41,34 +53,42 @@ $ npm run test:cov
 ## Database
 
 ### user
-id                    uuid
-username              varchar
-password              varchar
+
+| Column Name        | Data Type           |
+| ------------- | ------------- |
+| id      | uuid |
+| username      | varchar      |
+| password | varchar      |
+
 
 ### service
-id                    uuid
-name                  varchar
-description           varchar
-versionCount          int4
-lastModifiedAt        timestamp
+
+| Column Name        | Data Type           |
+| ------------- | ------------- |
+| id      | uuid |
+| name      | varchar      |
+| description | varchar      |
+| versionCount      | int4      |
+| lastModifiedAt | timestamp      |
 
 
 ### version
-id                    uuid
-versions              _text
-serviceID             varchar
 
-
+| Column Name        | Data Type           |
+| ------------- | ------------- |
+| id      | uuid |
+| versions      |  _text      |
+| serviceId | varchar      |
 
 
 ## Project Structure
-
+```
 src/
 ├── app.module.ts                        # Application root module
 ├── config.schema.ts                     # Schema for the environment variables
 ├── auth/
-├   └── dto/
-├       ├── auth-credentials.dto.ts      # DTO for sign in and sign up request payloads
+|   └── dto/
+|       ├── auth-credentials.dto.ts      # DTO for sign in and sign up request payloads
 |       └── jwt-payload.interface.ts     # Interface for JWT payload validation
 │   ├── auth.controller.ts               # Controller for auth to handle the requests
 │   ├── auth.module.ts                   # Module for auth
@@ -78,9 +98,9 @@ src/
 |   ├── user.entity.ts                   # User login entity
 │   └── users.repository.ts              # Repository for auth/user sign up
 ├── services/
-├   └── dto/
+|   └── dto/
 |       ├── add-service.dto.ts           # DTO for adding a new service
-├       ├── filter-service.dto.ts        # DTO for filtering the services
+|       ├── filter-service.dto.ts        # DTO for filtering the services
 |       └── pagination.dto.ts            # DTO for pagination and sorting of services
 │   ├── service.entity.ts                # Service entity
 │   ├── services.controller.ts           # Controller for Services to handle the requests
@@ -88,7 +108,7 @@ src/
 │   ├── services.repository.ts           # Services Repository
 │   └── services.service.ts              # Service for handling the operations of services
 ├── versions/
-├   └── tests/
+|   └── tests/
 |       └── versions.service.spec.ts     # Tests for versions
 │   ├── version.entity.ts                # Version entity
 │   ├── versions.controller.ts           # Controller for Version to handle the requests
@@ -97,7 +117,7 @@ src/
 |   └── versions.service.ts              # Service for handling the operations of versions
 └── main.ts                              # Application entry point
 
-
+```
 
 ## Assumptions
 
@@ -108,6 +128,7 @@ src/
 ## Major Items Pending
 - Return current page number and total number of services in the GET SERVICES response
 - Add unit tests for all controllers, repository and services
+- Consider using cursor based pagination instead of offset based pagination
 
 
 ## Design
