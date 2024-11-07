@@ -122,7 +122,7 @@ src/
 - Deleting a service ID should delete the record from version table as well
 
 
-## Major Items Pending
+## Items Pending
 - Return current page number and total number of records in the GET SERVICES response
 - Add unit tests for all controllers, repository and services
 - Consider using cursor based pagination instead of offset based pagination

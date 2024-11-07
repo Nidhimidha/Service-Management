@@ -1,6 +1,6 @@
 import { Test } from '@nestjs/testing';
-import { VersionsService } from '../versions.service';
-import { VersionsRepository } from '../versions.repository';
+import { VersionsService } from '../../versions/versions.service';
+import { VersionsRepository } from '../../versions/versions.repository';
 
 describe('VersionsService', () => {
   let versionsService: VersionsService;
