@@ -43,10 +43,6 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Installation
-
-
-
 ## Database
 
 ### user
@@ -179,7 +175,7 @@ SAMPLE RESPONSE -
         "name": "Contact Us",
         "description": "Lorem Ipsum",
         "versionCount": 1,
-        "createdAt": "2024-11-07T08:41:12.997Z"
+        "lastModifiedAt": "2024-11-07T08:41:12.997Z"
     },
 ]
 ```
@@ -258,7 +254,7 @@ SAMPLE RESPONSE
     "name": "Contact Us 3",
     "description": "Lorem Ipsum 3",
     "versionCount": 2,
-    "createdAt": "2024-11-07T09:40:33.368Z"
+    "lastModifiedAt": "2024-11-07T09:40:33.368Z"
 }
 
 ```
